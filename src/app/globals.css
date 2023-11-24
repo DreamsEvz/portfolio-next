@@ -6,4 +6,22 @@ body {
   .custom-radial-gradient {
     background-image: radial-gradient(circle at 10% 17%, #083036 0%, #040c18 93%);
   }
+
+  .picture-shadow {
+    box-shadow: 5px 5px 50px 0px rgba(0,0,0,0.89)
+  }
+
+  .test:hover {
+    animation-name: rotate-image;
+    animation-duration: 2s;
+  }
+
+  @keyframes rotate-image {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
