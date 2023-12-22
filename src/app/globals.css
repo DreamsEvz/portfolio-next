@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 body {
-  .custom-radial-gradient {
-    background-image: radial-gradient(circle at 10% 17%, #083036 0%, #040c18 93%);
-  }
+  background: radial-gradient(circle at 10% 17%, #083036 0%, #040c18 93%);
+  
 
   .picture-shadow {
     box-shadow: 5px 5px 50px 0px rgba(0,0,0,0.89)
