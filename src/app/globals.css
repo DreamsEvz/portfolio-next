@@ -23,4 +23,10 @@ body {
       transform: rotate(360deg);
     }
   }
+
+  .gradient-text {
+    background: radial-gradient(circle at 10% 17%, #083036 0%, #040c18 93%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
