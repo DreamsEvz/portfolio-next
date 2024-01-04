@@ -4,6 +4,7 @@ import Navbar from './components/navbar'
 import Skills from './components/skills'
 import Projects from './components/projects'
 import Pathing from './components/pathing'
+import Footer from './components/footer'
 export default function Home() {
   
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Skills/>
       <Projects/>
       <Pathing/>
+      <Footer/>
     </main>
   )
 }
