@@ -8,7 +8,7 @@ const Projects = () => {
                     <span className="text-6xl">Projets</span>
                 </div>
                 <div className="h-2/4 grid grid-cols-2 items-center gap-4 md:gap-10 md:grid-cols-4">
-                    <div className="flex flex-col aspect-square bg-white p-10 rounded-xl picture-shadow sm:p-4">
+                    <div className="flex flex-col aspect-square bg-white rounded-xl picture-shadow p-4 md:p-10">
                         <div className='h-1/2'>
                             <span className='gradient-text text-3xl'>Inside gones</span>
                             <p className='gradient-text'>Site internet du média Inside gones portant sur l&apos;actualité de l&apos;oympique lyonnais</p>
@@ -21,7 +21,7 @@ const Projects = () => {
                             <span className='gradient-text'>Création d&apos;un thème sur mesure en PHP</span>
                         </div>
                     </div>
-                    <div className="flex flex-col aspect-square bg-white p-10 rounded-xl picture-shadow sm:p-4">
+                    <div className="flex flex-col aspect-square bg-white rounded-xl picture-shadow p-4 md:p-10">
                         <div className='h-1/2'>
                             <span className='gradient-text text-3xl'>Safe area</span>
                             <p className='gradient-text'>Application permettant de répertorier des cas de harcelement au travail</p>
@@ -35,7 +35,7 @@ const Projects = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col aspect-square bg-white p-10 rounded-xl picture-shadow sm:p-4">
+                    <div className="flex flex-col aspect-square bg-white rounded-xl picture-shadow p-4 md:p-10">
                         <div className='h-1/2'>
                             <span className='gradient-text text-3xl'>Dogger</span>
                             <p className='gradient-text'>Application de gestion d&apos;erreur en production</p>
@@ -48,7 +48,7 @@ const Projects = () => {
                             <span className='gradient-text'>Vue js</span>
                         </div>
                     </div>
-                    <div className="flex flex-col aspect-square bg-white p-10 rounded-xl picture-shadow sm:p-4">
+                    <div className="flex flex-col aspect-square bg-white rounded-xl picture-shadow p-4 md:p-10">
                         <div className='h-1/2'>
                             <span className='gradient-text text-3xl sm:text-md'>Océta</span>
                             <p className='gradient-text'>Application de gestion de données client à destination du personnel médical</p>
