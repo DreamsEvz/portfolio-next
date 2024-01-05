@@ -1,7 +1,12 @@
-import Image from 'next/image';
+'use client'
 
+import Image from 'next/image';
+import useMobile  from '../hooks/useMobile';
 
 const Presentation = () => {
+
+    const isMobile = useMobile();
+
     return (
         <section className="w-full h-screen flex justify-center flex-col">
             <div className='flex justify-center'>
@@ -23,47 +28,47 @@ const Presentation = () => {
 
                 </div>
             </div>
-            <div className='bg-white h-16 w-auto mx-auto mt-48 rounded-xl'>
+            <div className='bg-white h-auto w-auto mx-auto mt-48 rounded-xl p-4 md:p-4'>
                 {/* make some button of social media */
                     <div className='flex justify-center items-center gap-4'>
-                        <div className='h-16 w-16 rounded-full flex justify-center align-center'>
+                        <div className='h-auto w-auto flex justify-center align-center'>
                             <Image
                                 src="/linkedin.svg"
                                 alt="linkedin logo"
-                                width={50}
-                                height={50}
+                                width={isMobile ? 20 : 50}
+                                height={isMobile ? 20 : 50}
                             />
                         </div>
-                        <div className='h-16 w-16 rounded-full flex justify-center align-center'>
+                        <div className='h-auto w-auto flex justify-center align-center'>
                             <Image
                                 src="/github.svg"
                                 alt="github logo"
-                                width={50}
-                                height={50}
+                                width={isMobile ? 20 : 50}
+                                height={isMobile ? 20 : 50}
                             />
                         </div>
-                        <div className='h-16 w-16 flex justify-center align-center'>
+                        <div className='h-auto w-auto flex justify-center align-center'>
                             <Image
                                 src="/discord.svg"
                                 alt="discord logo"
-                                width={50}
-                                height={50}
+                                width={isMobile ? 20 : 50}
+                                height={isMobile ? 20 : 50}
                             />
                         </div>
-                        <div className='h-16 w-16 flex justify-center align-center'>
+                        <div className='h-auto w-auto flex justify-center align-center'>
                             <Image
                                 src="/mail.svg"
                                 alt="mail logo"
-                                width={50}
-                                height={50}
+                                width={isMobile ? 20 : 50}
+                                height={isMobile ? 20 : 50}
                             />
                         </div>
-                        <div className='h-16 w-16 flex justify-center align-center'>
+                        <div className='h-auto w-auto flex justify-center align-center'>
                             <Image
                                 src="/phone.svg"
                                 alt="phone logo"
-                                width={50}
-                                height={50}
+                                width={isMobile ? 20 : 50}
+                                height={isMobile ? 20 : 50}
                             />
                         </div>
                     </div>
