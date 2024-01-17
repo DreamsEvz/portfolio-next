@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Presentation = () => {
 
     return (
-        <section className="w-full h-screen flex justify-center flex-col mt-[-100px]">
+        <section className="w-full h-screen flex justify-center flex-col mt-[-50px]">
             <div className='flex justify-center'>
                 <div className="flex-col-reverse flex items-center gap-4 md:w-3/4 md:h-full md:flex md:justify-center md:gap-16 md:flex-row">
                     <div className='w-1/2'>
