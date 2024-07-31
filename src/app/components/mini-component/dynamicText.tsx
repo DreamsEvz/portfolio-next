@@ -27,16 +27,14 @@ function DynamicText() {
         50
       );
     } else {
-      // Une fois que tout le mot est supprimé, nous préparons l'index pour le prochain mot.
       setTimeout(() => {
-        setText(""); // Assurons-nous que le texte est vide.
+        setText("");
         setWordIndex((prev) => (prev + 1) % words.length);
-      }, 500); // Donnons un peu de temps avant de recommencer pour éviter le chevauchement.
+      }, 500);
     }
   };
 
   useEffect(() => {
-    // Avant de commencer à taper, nous nous assurons que le texte est vide.
     setText("");
     typeWord(words[wordIndex], 0);
 
@@ -44,7 +42,7 @@ function DynamicText() {
       clearTimeout(typingTimer.current);
       clearTimeout(deletingTimer.current);
     };
-  }, [wordIndex]); // Dépend seulement de wordIndex
+  }, [wordIndex]);
 
   return (
     <span className="italic font-medium" id="dynamic-text">

@@ -5,7 +5,7 @@ const Skills = () => {
     <section className="mt-40 w-full">
       <div className="w-3/4 h-full m-auto text-white font-nova-mono scroll-reveal">
         <div className=" h-1/6 flex justify-center items-center md:h-1/4">
-          <span className="text-6xl">Compétences</span>
+          <span className="text-5xl">Compétences</span>
         </div>
         <div className="h-3/4 mt-10 items-center flex flex-col gap-10 md:gap-10 grid-container md:grid-cols-5">
           <div className="h-3/4 w-3/4 border-t-4 border-l-4 rounded-2xl p-5">
