@@ -6,7 +6,7 @@ import DynamicText from "./mini-component/dynamicText";
 
 const Presentation = () => {
   return (
-    <section className="w-full flex flex-col mt-16">
+    <section className="w-full flex flex-col mt-8">
       <div className="hidden-text w-full h-auto text-white text-center font-nova-mono">
         <Image
           className="coin mx-auto rounded-full border-4 border-white"
