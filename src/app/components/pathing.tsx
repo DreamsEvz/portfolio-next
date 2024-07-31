@@ -5,7 +5,7 @@ const Pathing = () => {
         <div className="h-1/4 flex justify-center items-center">
           <span className="text-5xl md:text-6xl">Parcours</span>
         </div>
-        <div className="h-3/4 flex flex-col items-center gap-10 mt-8 md:flex-row">
+        <div className="h-3/4 flex flex-col items-center gap-10 mt-8 md:flex-row md:items-stretch">
           <div className="h-full w-full border-4 rounded-xl p-2">
             <h2 className="text-center text-3xl">
               Experiences professionnelles
