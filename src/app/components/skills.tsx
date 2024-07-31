@@ -9,7 +9,7 @@ const Skills = () => {
         </div>
         <div className="h-3/4 mt-10 items-center flex flex-col gap-10 md:gap-10 grid-container md:grid-cols-5">
           <div className="h-3/4 w-3/4 border-t-4 border-l-4 rounded-2xl p-5">
-            <div className="h-1/4 w-full flex justify-center items-center relative">
+            <div className="h-1/4 w-full flex justify-center items-center">
               <span className="text-3xl md:text-3xl text-center">
                 Front-end
               </span>
@@ -46,10 +46,10 @@ const Skills = () => {
             </div>
           </div>
           <div className="h-3/4 w-3/4 border-b-4 border-r-4 rounded-2xl p-5">
-            <div className="h-1/4 flex justify-center items-center relative">
+            <div className="h-1/4 flex justify-center items-center">
               <span className="text-3xl text-center">Back-end</span>
             </div>
-            <div className="h-3/4 p-4 grid grid-cols-2  justify-center items-center gap-2 md:gap-0">
+            <div className="h-3/4 p-4 grid grid-cols-2 justify-center items-center gap-2 md:gap-0">
               <Image
                 className="mx-auto"
                 src={"/skills-svg/laravel.svg"}
@@ -81,7 +81,7 @@ const Skills = () => {
             </div>
           </div>
           <div className="h-3/4 w-3/4 border-t-4 border-l-4 rounded-2xl p-5">
-            <div className="h-1/4 flex justify-center items-center relative">
+            <div className="h-1/4 flex justify-center items-center">
               <span className="text-3xl md:text-3xl text-center">Langages</span>
             </div>
             <div className="h-3/4 p-4 grid grid-cols-2  justify-center items-center gap-2 md:gap-0">
@@ -116,26 +116,52 @@ const Skills = () => {
             </div>
           </div>
           <div className="h-3/4 w-3/4 border-b-4 border-r-4 rounded-2xl p-5">
-            <div className="h-1/4 w-full flex justify-center items-center relative">
+            <div className="h-1/4 flex justify-center items-center">
               <span className="text-3xl md:text-3xl text-center">BDD</span>
             </div>
-            <div className="h-3/4 mt-10 items-center flex flex-col gap-10 md:gap-10 grid-container md:grid-cols-5">
-              <span className="text-xs md:text-2xl">Mongo DB</span>
-              <span className="text-xs md:text-2xl">Bases relationnelles</span>
+            <div className="h-3/4 p-4 grid grid-cols-2 justify-center items-center gap-2 md:gap-0">
+              <Image
+                className="mx-auto"
+                src={"/skills-svg/mysql-icon.svg"}
+                height={60}
+                width={60}
+                alt={"mysql"}
+              />
+              <Image
+                className="mx-auto h-16"
+                src={"/skills-svg/mongodb-icon.svg"}
+                height={60}
+                width={60}
+                alt={"mongodb"}
+              />
+              <Image
+                className="mx-auto h-16"
+                src={"/skills-svg/postgresql.svg"}
+                height={60}
+                width={60}
+                alt={"postgresql"}
+              />
             </div>
           </div>
-          <div className="h-3/4 border-t-4 border-l-4 rounded-2xl">
+          <div className="h-3/4 w-3/4 border-t-4 border-l-4 rounded-2xl">
             <div className="h-1/4 w-full flex justify-center items-center relative">
-              <div className="absolute border-b-4 top-1/2 bottom-0 w-3/4"></div>
-              <span className="text-md md:text-3xl text-center">Autre</span>
+              <span className="text-3xl md:text-3xl text-center">CI/CD</span>
             </div>
-            <div className="h-3/4 text-center p-10 flex flex-col justify-evenly	 items-center">
-              <span className="text-xs md:text-2xl">Github</span>
-              <span className="text-xs md:text-2xl">Gitlab</span>
-              <span className="text-xs md:text-2xl">Docker</span>
-              <span className="text-xs md:text-2xl">
-                Mise en place de CI/CD simple
-              </span>
+            <div className="h-3/4 p-4 grid grid-cols-2 justify-center items-center gap-2 md:gap-0">
+              <Image
+                className="mx-auto h-16"
+                src={"/skills-svg/docker-icon.svg"}
+                height={60}
+                width={60}
+                alt={"docker"}
+              />
+              <Image
+                className="mx-auto h-16"
+                src={"/skills-svg/gitlab.svg"}
+                height={60}
+                width={60}
+                alt={"gitlab"}
+              />
             </div>
           </div>
         </div>
