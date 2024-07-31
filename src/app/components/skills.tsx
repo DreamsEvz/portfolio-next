@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Skills = () => {
   return (
-    <section className="mt-40 w-full">
+    <section id="competences" className="mt-40 w-full">
       <div className="w-3/4 h-full m-auto text-white font-nova-mono scroll-reveal">
         <div className=" h-1/6 flex justify-center items-center md:h-1/4">
           <span className="text-5xl md:text-6xl">Compétences</span>

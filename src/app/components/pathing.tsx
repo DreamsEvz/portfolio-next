@@ -1,6 +1,6 @@
 const Pathing = () => {
   return (
-    <section className="h-auto w-full mt-16">
+    <section id="parcours" className="h-auto w-full mt-16">
       <div className="w-3/4 h-full m-auto text-white font-nova-mono">
         <div className="h-1/4 flex justify-center items-center">
           <span className="text-5xl md:text-6xl">Parcours</span>

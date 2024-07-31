@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Projects = () => {
   return (
-    <section className="h-auto w-full mt-16">
+    <section id="projet" className="h-auto w-full mt-16">
       <div className="w-3/4 m-auto text-white font-nova-mono">
         <div className="h-1/4 flex items-center md:justify-center">
           <span className="text-5xl text-center md:text-6xl">

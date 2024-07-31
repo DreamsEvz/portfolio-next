@@ -1,14 +1,12 @@
 "use client";
 
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Compétences", href: "#", current: false },
-  { name: "Projets", href: "#", current: false },
-  { name: "Parcours", href: "#", current: false },
-  { name: "Me contacter", href: "#", current: false },
+  { name: "Compétences", href: "#competences", current: false },
+  { name: "Parcours", href: "#parcours", current: false },
+  { name: "Projets", href: "#projet", current: false },
 ];
 
 function classNames(...classes) {
