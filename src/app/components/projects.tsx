@@ -76,13 +76,13 @@ const Projects = () => {
                   target="_blank"
                   className="flex flex-row items-center"
                 >
-                  <span>G'le Point</span>
+                  <span>G&apos;le Point</span>
                   <LinkIcon className="h-6 w-6 text-black" />
                 </a>
               </div>
               <p className="gradient-text">
                 Application de carte intéractive pour partager des points
-                d'intérets entre amis
+                d&apos;intérets entre amis
               </p>
             </div>
             <div className="h-1/2 mt-4">
