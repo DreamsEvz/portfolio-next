@@ -6,7 +6,7 @@ const Pathing = () => {
           <span className="text-5xl md:text-6xl">Parcours</span>
         </div>
         <div className="h-3/4 flex flex-col items-center gap-10 mt-8 md:flex-row">
-          <div className="h-full w-full border-4 rounded-xl">
+          <div className="h-full w-full border-4 rounded-xl p-2">
             <h2 className="text-center text-3xl">
               Experiences professionnelles
             </h2>
@@ -30,7 +30,7 @@ const Pathing = () => {
               <p>2021</p>
             </div>
           </div>
-          <div className="h-full w-full border-4 rounded-xl">
+          <div className="h-full w-full border-4 rounded-xl p-2">
             <h2 className="text-center text-3xl">
               Diplomes & parcours scolaire
             </h2>
