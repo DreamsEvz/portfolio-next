@@ -97,18 +97,22 @@ const Projects = () => {
           </div>
         </div>
         <div className="h-1/4 flex items-center justify-center mt-16">
-          <div className="flex justify-center items-center bg-white p-5 rounded-xl">
-            <p className="gradient-text mr-4">En découvrir plus sur mon</p>
-            <a href="https://github.com/DreamsEvz" target="_blank">
-              <Image
-                src="/github.svg"
-                alt="Github logo"
-                objectFit="cover"
-                width={60}
-                height={60}
-              />
-            </a>
-          </div>
+          <a
+            href="https://github.com/DreamsEvz"
+            target="_blank"
+            className="flex justify-center items-center bg-white p-5 rounded-xl"
+          >
+            <p className="gradient-text text-sm mr-4 md:text-lg">
+              En découvrir plus sur mon
+            </p>
+            <Image
+              src="/github.svg"
+              alt="Github logo"
+              objectFit="cover"
+              width={60}
+              height={60}
+            />
+          </a>
         </div>
       </div>
     </section>
