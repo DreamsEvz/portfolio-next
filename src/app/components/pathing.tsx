@@ -32,7 +32,7 @@ const Pathing = () => {
           </div>
           <div className="h-full w-full border-4 rounded-xl p-2">
             <h2 className="text-center text-3xl">
-              Diplomes & parcours scolaire
+              Diplômes & parcours scolaire
             </h2>
             <div className="h-1 w-3/4 m-auto bg-white mt-4"></div>
             <div className="h-3/4 mt-4 p-5">
