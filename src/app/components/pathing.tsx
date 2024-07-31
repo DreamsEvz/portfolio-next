@@ -23,8 +23,8 @@ const Pathing = () => {
             <div className="h-3/4 p-5">
               <p className="font-bold">Com & company</p>
               <p>
-                Développement d'une plateforme de signature électronique interne
-                àl'entreprise
+                Développement d&apos;une plateforme de signature électronique
+                interne à l&apos;entreprise
               </p>
               <p>Symfony - Vuejs</p>
               <p>2021</p>
