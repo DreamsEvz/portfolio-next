@@ -16,7 +16,7 @@ const Presentation = () => {
           alt={""}
         ></Image>
         <h1 className="text-5xl mt-12 md:text-6xl">EVAN MARCEL</h1>
-        <h2 className="text-2xl mt-4 text-container md:text-3xl">
+        <h2 className="text-lg mt-4 text-container md:text-3xl">
           <span>DÉVELOPPEUR FULLSTACK </span>
           <DynamicText />
           <span className="cursor">|</span>
