@@ -6,7 +6,9 @@ const Projects = () => {
     <section className="h-auto w-full mt-16">
       <div className="w-3/4 m-auto text-white font-nova-mono">
         <div className="h-1/4 flex items-center md:justify-center">
-          <span className="text-6xl text-center">Quelques projets</span>
+          <span className="text-5xl text-center md:text-6xl">
+            Quelques projets
+          </span>
         </div>
         <div className="h-full grid grid-cols-1 items-center gap-4 mt-16 md:gap-10 md:grid-cols-4">
           <div className="flex flex-col bg-white rounded-xl picture-shadow p-4 md:p-10 md:aspect-square">
