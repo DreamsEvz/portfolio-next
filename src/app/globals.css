@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
   scroll-behavior: smooth;
@@ -10,6 +9,8 @@
 
 html {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -18,12 +19,28 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  min-height: 100vh;
-  height: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  position: relative;
+    z-index: -1;
+}
+
+/* Alternative background approach for better compatibility */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 10% 17%, #083036 0%, #040c18 93%);
+
+  pointer-events: none;
 }
 
 /* Enhanced picture shadow */

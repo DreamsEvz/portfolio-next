@@ -221,7 +221,7 @@ const Pathing = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-emerald-400 mb-2">3+</div>
-                <div className="text-gray-300">Années d'expérience</div>
+                <div className="text-gray-300">Années d&rsquo;expérience</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400 mb-2">3</div>

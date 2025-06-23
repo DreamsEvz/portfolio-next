@@ -1,22 +1,12 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 
+const WORDS = ["PASSIONNÉ", "CRÉATIF", "INVESTI"];
+
 function DynamicText() {
   const [text, setText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
-  const words = ["PASSIONNÉ", "CRÉATIF", "INVESTI"];
   const typingTimer = useRef(null);
   const deletingTimer = useRef(null);
-
-  const typeWord = useCallback((word, idx) => {
-    if (idx < word.length) {
-      setText((prev) => prev + word.charAt(idx));
-      clearTimeout(typingTimer.current);
-      typingTimer.current = setTimeout(() => typeWord(word, idx + 1), 100);
-    } else {
-      clearTimeout(deletingTimer.current);
-      deletingTimer.current = setTimeout(() => deleteWord(word), 1000);
-    }
-  }, []);
 
   const deleteWord = useCallback((word) => {
     if (word.length > 0) {
@@ -29,20 +19,31 @@ function DynamicText() {
     } else {
       setTimeout(() => {
         setText("");
-        setWordIndex((prev) => (prev + 1) % words.length);
+        setWordIndex((prev) => (prev + 1) % WORDS.length);
       }, 500);
     }
-  }, [words.length]);
+  }, []);
+
+  const typeWord = useCallback((word, idx) => {
+    if (idx < word.length) {
+      setText((prev) => prev + word.charAt(idx));
+      clearTimeout(typingTimer.current);
+      typingTimer.current = setTimeout(() => typeWord(word, idx + 1), 100);
+    } else {
+      clearTimeout(deletingTimer.current);
+      deletingTimer.current = setTimeout(() => deleteWord(word), 1000);
+    }
+  }, [deleteWord]);
 
   useEffect(() => {
     setText("");
-    typeWord(words[wordIndex], 0);
+    typeWord(WORDS[wordIndex], 0);
 
     return () => {
       clearTimeout(typingTimer.current);
       clearTimeout(deletingTimer.current);
     };
-  }, [wordIndex, words, typeWord]);
+  }, [wordIndex, typeWord]);
 
   return (
     <span className="italic font-medium" id="dynamic-text">
