@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Evan MARCEL - Développeur Fullstack",
-  description: "Portfolio de Evan MARCEL - Développeur Fullstack passionné, spécialisé en React, Next.js, Laravel et Django. Actuellement en poste au sein de l'entreprise Bimedoc.",
+  description: "Portfolio de Evan MARCEL - Développeur Fullstack passionné.",
   keywords: ["développeur", "fullstack", "react", "nextjs", "laravel", "django", "vue", "portfolio", "lyon"],
   authors: [{ name: "Evan MARCEL" }],
   creator: "Evan MARCEL",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://evan-marcel.fr",
     siteName: "Evan MARCEL - Portfolio",
     title: "Evan MARCEL - Développeur Fullstack",
-    description: "Portfolio de Evan MARCEL - Développeur Fullstack passionné, spécialisé en React, Next.js, Laravel et Django.",
+    description: "Portfolio de Evan MARCEL - Développeur Fullstack passionné.",
   },
   twitter: {
     card: "summary_large_image",
