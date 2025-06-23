@@ -10,7 +10,7 @@ const projectsData = [
     description: "Site internet de covoiturage de soirée",
     category: "Projet personnel",
     technologies: ["Next.js", "Tailwind CSS", "Supabase"],
-    details: "Plateforme mettant en relation de covoitureurs avec des conducteurs sobre pour des soirées sans risque.",
+    details: "Plateforme de mise en relation entre covoitureurs et conducteurs sobres pour des soirées en toute sécurité",
     link: null,
     featured: false,
   },
