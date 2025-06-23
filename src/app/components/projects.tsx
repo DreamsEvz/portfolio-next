@@ -1,120 +1,198 @@
-import { LinkIcon } from "@heroicons/react/24/outline";
+"use client";
+
+import { LinkIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+
+const projectsData = [
+  {
+    title: "Orgatagova",
+    description: "Site internet de covoiturage de soirée",
+    category: "Projet personnel",
+    technologies: ["Next.js", "Tailwind CSS", "Supabase"],
+    details: "Plateforme mettant en relation de covoitureurs avec des conducteurs sobre pour des soirées sans risque.",
+    link: null,
+    featured: false,
+  },
+  {
+    title: "Safe area",
+    description: "Application permettant de répertorier des cas de harcèlement au travail",
+    category: "Projet étudiant",
+    technologies: ["Laravel", "Vue.js"],
+    details: "Application web complète avec interface administrateur",
+    link: null,
+    featured: false,
+  },
+  {
+    title: "Dogger",
+    description: "Application de gestion d'erreur en production",
+    category: "Projet étudiant",
+    technologies: ["Laravel", "Vue.js"],
+    details: "Système de monitoring et de gestion d'erreurs",
+    link: "https://dogger.cloud",
+    featured: true,
+  },
+  {
+    title: "G'le Point",
+    description: "Application de carte interactive pour partager des points d'intérêts entre amis",
+    category: "Projet validation Master",
+    technologies: ["Next.js", "Firebase"],
+    details: "Application mobile-first avec géolocalisation",
+    link: "https://glepoint.fr",
+    featured: true,
+  },
+];
 
 const Projects = () => {
-  return (
-    <section id="projet" className="h-auto w-full mt-16">
-      <div className="w-3/4 m-auto text-white font-nova-mono">
-        <div className="h-1/4 flex items-center md:justify-center">
-          <span className="text-5xl text-center md:text-6xl">
-            Quelques projets
-          </span>
-        </div>
-        <div className="h-full grid grid-cols-1 items-center gap-4 mt-16 md:gap-10 md:grid-cols-4">
-          <div className="flex flex-col bg-white rounded-xl picture-shadow p-4 md:p-10 md:aspect-square">
-            <div className="h-auto">
-              <span className="gradient-text text-3xl">Inside gones</span>
-              <p className="gradient-text">
-                Site internet du média Inside gones portant sur l&apos;actualité
-                de l&apos;oympique lyonnais
-              </p>
-            </div>
-            <div className="h-auto mt-4">
-              <span className="gradient-text text-2xl">Projet étudiant</span>
-              <br />
-              <span className="gradient-text">Wordpress</span>
-              <br />
-              <span className="gradient-text">
-                Création d&apos;un thème sur mesure en PHP
-              </span>
-            </div>
-          </div>
-          <div className="flex flex-col bg-white rounded-xl picture-shadow p-4 md:p-10 md:aspect-square">
-            <div className="h-1/2">
-              <span className="gradient-text text-3xl">Safe area</span>
-              <p className="gradient-text">
-                Application permettant de répertorier des cas de harcelement au
-                travail
-              </p>
-            </div>
-            <div className="h-1/2 mt-4">
-              <span className="gradient-text text-2xl">Projet étudiant</span>
-              <br />
-              <span className="gradient-text">Laravel</span>
-              <br />
-              <span className="gradient-text">Vue js</span>
-            </div>
-          </div>
+  const [visibleProjects, setVisibleProjects] = useState<number[]>([]);
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-          <div className="flex flex-col bg-white rounded-xl picture-shadow p-4 md:p-10 md:aspect-square">
-            <div className="h-1/2">
-              <div className="gradient-text text-3xl">
-                <a
-                  href="https://dogger.cloud"
-                  target="_blank"
-                  className="flex flex-row items-center"
-                >
-                  <span>Dogger</span>
-                  <LinkIcon className="h-6 w-6 text-black" />
-                </a>
-              </div>
-              <p className="gradient-text">
-                Application de gestion d&apos;erreur en production
-              </p>
-            </div>
-            <div className="h-1/2 mt-4">
-              <span className="gradient-text text-2xl">Projet étudiant</span>
-              <br />
-              <span className="gradient-text">Laravel</span>
-              <br />
-              <span className="gradient-text">Vue js</span>
-            </div>
-          </div>
-          <div className="flex flex-col bg-white rounded-xl picture-shadow p-4 md:p-10 md:aspect-square">
-            <div className="h-1/2">
-              <div className="gradient-text text-3xl w-auto sm:text-md">
-                <a
-                  href="https://glepoint.fr"
-                  target="_blank"
-                  className="flex flex-row items-center"
-                >
-                  <span>G&apos;le Point</span>
-                  <LinkIcon className="h-6 w-6 text-black" />
-                </a>
-              </div>
-              <p className="gradient-text">
-                Application de carte intéractive pour partager des points
-                d&apos;intérets entre amis
-              </p>
-            </div>
-            <div className="h-1/2 mt-4">
-              <span className="gradient-text text-2xl">
-                Projet validation Master
-              </span>
-              <br />
-              <span className="gradient-text">NextJs</span>
-              <br />
-              <span className="gradient-text">Firebase</span>
-            </div>
-          </div>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            setVisibleProjects(prev => [...prev, index]);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    projectRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section id="projet" className="py-20 px-4 w-full relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#083036]/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-[#0a4a52]/10 rounded-full blur-3xl"></div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16 fade-in">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
+              Quelques projets
+            </span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#083036] to-[#0a4a52] mx-auto rounded-full"></div>
+          <p className="text-gray-300 text-lg mt-6 max-w-2xl mx-auto">
+            Découvrez mes réalisations et projets qui démontrent mes compétences en développement
+          </p>
         </div>
-        <div className="h-1/4 flex items-center justify-center mt-16">
-          <a
-            href="https://github.com/DreamsEvz"
-            target="_blank"
-            className="flex justify-center items-center bg-white p-5 rounded-xl"
-          >
-            <p className="gradient-text text-sm mr-4 md:text-lg">
-              En découvrir plus sur mon
-            </p>
-            <Image
-              src="/github.svg"
-              alt="Github logo"
-              objectFit="cover"
-              width={60}
-              height={60}
-            />
-          </a>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 mb-16">
+          {projectsData.map((project, index) => (
+            <div
+              key={project.title}
+              ref={el => {
+                projectRefs.current[index] = el;
+              }}
+              data-index={index}
+              className={`group relative project-card rounded-2xl p-6 transition-all duration-500 ${
+                visibleProjects.includes(index) ? 'fade-in-scale' : 'opacity-0 translate-y-8'
+              } ${project.featured ? 'md:col-span-2 lg:col-span-1' : ''}`}
+              style={{ animationDelay: `${index * 0.1}s` }}
+              onMouseEnter={() => setHoveredProject(index)}
+              onMouseLeave={() => setHoveredProject(null)}
+            >
+              {/* Featured Badge */}
+              {project.featured && (
+                <div className="absolute top-4 right-4 px-3 py-1 bg-[#0a4a52] text-white text-xs font-bold rounded-full z-10">
+                  FEATURED
+                </div>
+              )}
+
+              {/* Project Content */}
+              <div className="space-y-4 h-full flex flex-col">
+                {/* Header */}
+                <div className="space-y-2">
+                  <div className="flex items-start justify-between">
+                    <h3 className="text-2xl font-bold gradient-text group-hover:scale-105 transition-transform duration-300">
+                      {project.link ? (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 hover:text-[#0a4a52] transition-colors"
+                        >
+                          {project.title}
+                          <ArrowTopRightOnSquareIcon className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        </a>
+                      ) : (
+                        project.title
+                      )}
+                    </h3>
+                  </div>
+                  
+                  <span className="inline-block px-3 py-1 bg-[#0a4a52]/20 text-[#0a4a52] text-sm rounded-full font-medium">
+                    {project.category}
+                  </span>
+                </div>
+
+                {/* Description */}
+                <p className="gradient-text text-sm leading-relaxed flex-grow">
+                  {project.description}
+                </p>
+
+                {/* Details */}
+                <p className="gradient-text text-xs">
+                  {project.details}
+                </p>
+
+                {/* Technologies */}
+                <div className="space-y-3 mt-auto">
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-2 py-1 bg-gradient-to-r from-[#083036]/20 to-[#0a4a52]/20 text-[#0a4a52] text-xs rounded-lg border border-[#0a4a52]/30 font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Hover Effect Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br from-[#083036]/5 to-[#0a4a52]/5 rounded-2xl transition-opacity duration-300 pointer-events-none ${
+                  hoveredProject === index ? 'opacity-100' : 'opacity-0'
+                }`}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* GitHub CTA */}
+        <div className="text-center fade-in-delayed">
+          <div className="inline-flex items-center justify-center">
+            <a
+              href="https://github.com/DreamsEvz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-4 bg-white/95 hover:bg-white text-[#040c18] px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+            >
+              <span className="text-lg font-semibold">En découvrir plus sur mon</span>
+              <div className="relative">
+                <Image
+                  src="/github.svg"
+                  alt="GitHub logo"
+                  width={40}
+                  height={40}
+                  className="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+                />
+                <div className="absolute inset-0 bg-[#0a4a52]/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              </div>
+              <ArrowTopRightOnSquareIcon className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
