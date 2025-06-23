@@ -79,7 +79,8 @@ const Footer = () => {
                 </span>
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Vous avez un projet en tête ? Une opportunité à discuter ? 
+                L&rsquo;oreille toujours attentive, je reste à votre écoute.
+                <br />
                 N&rsquo;hésitez pas à me contacter, je serais ravi d&rsquo;échanger avec vous.
               </p>
             </div>
