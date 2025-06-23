@@ -156,9 +156,9 @@ const Skills = () => {
           <div className="glass-dark rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-semibold text-white mb-4">Mon expertise</h3>
             <p className="text-gray-300 leading-relaxed">
-              Fort de plusieurs années d'expérience, je maîtrise un large éventail de technologies 
+              Fort de plusieurs années d&rsquo;expérience, je maîtrise un large éventail de technologies 
               modernes pour créer des applications web complètes et performantes. Ma passion pour 
-              l'apprentissage continu me permet de rester à jour avec les dernières innovations 
+              l&rsquo;apprentissage continu me permet de rester à jour avec les dernières innovations 
               du développement web.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -172,7 +172,7 @@ const Skills = () => {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-emerald-400 mb-2">3+</div>
-                <div className="text-gray-300">Années d'expérience</div>
+                <div className="text-gray-300">Années d&rsquo;expérience</div>
               </div>
             </div>
           </div>

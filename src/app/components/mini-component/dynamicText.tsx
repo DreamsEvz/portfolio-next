@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 function DynamicText() {
   const [text, setText] = useState("");
@@ -7,7 +7,7 @@ function DynamicText() {
   const typingTimer = useRef(null);
   const deletingTimer = useRef(null);
 
-  const typeWord = (word, idx) => {
+  const typeWord = useCallback((word, idx) => {
     if (idx < word.length) {
       setText((prev) => prev + word.charAt(idx));
       clearTimeout(typingTimer.current);
@@ -16,9 +16,9 @@ function DynamicText() {
       clearTimeout(deletingTimer.current);
       deletingTimer.current = setTimeout(() => deleteWord(word), 1000);
     }
-  };
+  }, []);
 
-  const deleteWord = (word) => {
+  const deleteWord = useCallback((word) => {
     if (word.length > 0) {
       setText((prev) => prev.slice(0, -1));
       clearTimeout(deletingTimer.current);
@@ -32,7 +32,7 @@ function DynamicText() {
         setWordIndex((prev) => (prev + 1) % words.length);
       }, 500);
     }
-  };
+  }, [words.length]);
 
   useEffect(() => {
     setText("");
@@ -42,7 +42,7 @@ function DynamicText() {
       clearTimeout(typingTimer.current);
       clearTimeout(deletingTimer.current);
     };
-  }, [wordIndex]);
+  }, [wordIndex, words, typeWord]);
 
   return (
     <span className="italic font-medium" id="dynamic-text">

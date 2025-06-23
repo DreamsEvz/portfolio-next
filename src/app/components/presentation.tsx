@@ -60,7 +60,7 @@ const Presentation = () => {
           {/* Status Badge */}
           <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-lg md:text-xl">
             <div className="w-3 h-3 bg-emerald-400 rounded-full mr-3 animate-pulse"></div>
-            <span className="text-gray-200">Actuellement en poste au sein de l'entreprise Bimedoc</span>
+            <span className="text-gray-200">Actuellement en poste au sein de l&rsquo;entreprise Bimedoc</span>
             <a href="https://www.bimedoc.com/" target="_blank" rel="noopener noreferrer">
               <ArrowTopRightOnSquareIcon className="ml-2 w-4 h-4" />
             </a>

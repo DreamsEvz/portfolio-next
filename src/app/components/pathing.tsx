@@ -17,7 +17,7 @@ const experiences = [
   {
     company: "Virtualbuilding",
     role: "Développeur Fullstack",
-    description: "Développement d'un back-office sur mesure pour la création d'iframe intégrable sur les sites des clients",
+    description: "Développement d&rsquo;un back-office sur mesure pour la création d&rsquo;iframe intégrable sur les sites des clients",
     technologies: ["React", "Django"],
     period: "2021-2024",
     type: "experience",
@@ -27,7 +27,7 @@ const experiences = [
   {
     company: "Com & company",
     role: "Développeur Web",
-    description: "Développement d'une plateforme de signature électronique interne à l'entreprise",
+    description: "Développement d&rsquo;une plateforme de signature électronique interne à l&rsquo;entreprise",
     technologies: ["Symfony", "Vue.js"],
     period: "2021",
     type: "experience",
@@ -99,7 +99,7 @@ const Pathing = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#083036] to-[#0a4a52] mx-auto rounded-full"></div>
           <p className="text-gray-300 text-lg mt-6 max-w-2xl mx-auto">
-            Mon parcours professionnel et académique qui m'a mené jusqu'ici
+            Mon parcours professionnel et académique qui m&rsquo;a mené jusqu&rsquo;ici
           </p>
         </div>
 

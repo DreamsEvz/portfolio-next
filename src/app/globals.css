@@ -2,78 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
   scroll-behavior: smooth;
 }
 
 html {
-  background: radial-gradient(circle at 10% 17%, #083036 0%, #040c18 93%);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  height: 100%;
 }
 
 body {
+  background: #040c18; /* Fallback solid color */
+  background: radial-gradient(circle at 10% 17%, #083036 0%, #040c18 93%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   min-height: 100vh;
+  height: 100%;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
 
-  @keyframes rotate-image {
-    0% {
-      transform: rotate(0deg);
-    }
+/* Enhanced picture shadow */
+.picture-shadow {
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.3),
+    0 20px 40px -10px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
 
-    100% {
-      transform: rotate(360deg);
-    }
+@keyframes rotate-image {
+  0% {
+    transform: rotate(0deg);
   }
 
-  .gradient-text {
-    background: linear-gradient(135deg, #083036 0%, #0a4a52 50%, #040c18 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: #083036; /* Fallback for browsers that don't support background-clip */
+  100% {
+    transform: rotate(360deg);
   }
+}
 
-  /* Alternative simple gradient without clipping issues */
-  .gradient-text-simple {
-    color: #0a4a52;
-  }
+.gradient-text {
+  background: linear-gradient(135deg, #083036 0%, #0a4a52 50%, #040c18 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #083036; /* Fallback for browsers that don't support background-clip */
+}
 
-  @keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
+/* Alternative simple gradient without clipping issues */
+.gradient-text-simple {
+  color: #0a4a52;
+}
 
-  .grid-container > .grid-item:nth-child(5) {
-    grid-column: 1 / 3;
-    align-self: center;
-    justify-self: center;
-  }
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
 
-  @keyframes scroll {
-    to {
-      opacity: 1;
-    }
-  }
+.cursor {
+  font-weight: bold;
+  animation: blink 1s ease-in-out infinite;
+  color: #0a4a52;
+}
 
-  footer {
-    background: linear-gradient(135deg, rgba(8, 48, 54, 0.9) 0%, rgba(4, 12, 24, 0.9) 100%);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
 
-  .cursor {
-    font-weight: bold;
-    animation: blink 1s ease-in-out infinite;
-    color: #0a4a52;
-  }
-
-  @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-  }
+/* Footer styles */
+footer {
+  background: linear-gradient(135deg, rgba(8, 48, 54, 0.9) 0%, rgba(4, 12, 24, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Glass morphism effects */
@@ -217,38 +221,6 @@ body {
   background: rgba(8, 48, 54, 0.8);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Timeline for experience */
-.timeline-item {
-  position: relative;
-  padding-left: 2rem;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.5rem;
-  width: 12px;
-  height: 12px;
-  background: linear-gradient(45deg, #083036, #0a4a52);
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.timeline-item::after {
-  content: '';
-  position: absolute;
-  left: 5px;
-  top: 1.5rem;
-  width: 2px;
-  height: calc(100% - 1rem);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
-}
-
-.timeline-item:last-child::after {
-  display: none;
 }
 
 /* Scroll progress indicator */
