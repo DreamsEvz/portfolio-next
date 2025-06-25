@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { 
   EnvelopeIcon, 
-  PhoneIcon, 
   MapPinIcon,
   ArrowTopRightOnSquareIcon,
   HeartIcon
@@ -17,13 +16,6 @@ const contactInfo = [
     value: "marcel.evan2001@gmail.com",
     href: "mailto:marcel.evan2001@gmail.com",
     color: "text-blue-400"
-  },
-  {
-    icon: PhoneIcon,
-    label: "Téléphone",
-    value: "+33 6 12 22 20 88",
-    href: "tel:+33612222088",
-    color: "text-green-400"
   },
   {
     icon: MapPinIcon,
